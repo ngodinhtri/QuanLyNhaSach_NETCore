@@ -1,0 +1,12 @@
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelDatabase\obj\Debug\netcoreapp3.1\ModelDatabase.csprojAssemblyReference.cache
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelDatabase\obj\Debug\netcoreapp3.1\ModelDatabase.AssemblyInfoInputs.cache
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelDatabase\obj\Debug\netcoreapp3.1\ModelDatabase.AssemblyInfo.cs
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelDatabase\bin\Debug\netcoreapp3.1\ModelDatabase.deps.json
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelDatabase\bin\Debug\netcoreapp3.1\ModelDatabase.runtimeconfig.json
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelDatabase\bin\Debug\netcoreapp3.1\ModelDatabase.runtimeconfig.dev.json
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelDatabase\bin\Debug\netcoreapp3.1\ModelDatabase.dll
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelDatabase\bin\Debug\netcoreapp3.1\ModelDatabase.pdb
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelDatabase\obj\Debug\netcoreapp3.1\ModelDatabase.csproj.CoreCompileInputs.cache
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelDatabase\obj\Debug\netcoreapp3.1\ModelDatabase.dll
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelDatabase\obj\Debug\netcoreapp3.1\ModelDatabase.pdb
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelDatabase\obj\Debug\netcoreapp3.1\ModelDatabase.genruntimeconfig.cache

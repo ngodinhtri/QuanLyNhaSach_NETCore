@@ -1,0 +1,12 @@
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelHandle\bin\Debug\netcoreapp3.1\ModelHandle.deps.json
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelHandle\bin\Debug\netcoreapp3.1\ModelHandle.dll
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelHandle\bin\Debug\netcoreapp3.1\ModelHandle.pdb
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelHandle\obj\Debug\netcoreapp3.1\ModelHandle.csprojAssemblyReference.cache
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelHandle\obj\Debug\netcoreapp3.1\ModelHandle.AssemblyInfoInputs.cache
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelHandle\obj\Debug\netcoreapp3.1\ModelHandle.AssemblyInfo.cs
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelHandle\obj\Debug\netcoreapp3.1\ModelHandle.csproj.CoreCompileInputs.cache
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelHandle\obj\Debug\netcoreapp3.1\ModelHandle.dll
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelHandle\obj\Debug\netcoreapp3.1\ModelHandle.pdb
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelHandle\bin\Debug\netcoreapp3.1\ModelDatabase.dll
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelHandle\bin\Debug\netcoreapp3.1\ModelDatabase.pdb
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelHandle\obj\Debug\netcoreapp3.1\ModelHandle.csproj.CopyComplete

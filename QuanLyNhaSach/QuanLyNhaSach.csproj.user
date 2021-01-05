@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form_AddNewItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form_Closing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form_Confirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form_Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form_EditItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UserFormControls\UFC_Categories.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserFormControls\UFC_Customer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserFormControls\UFC_Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserFormControls\UFC_Login.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserFormControls\UFC_PurchaseItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserFormControls\UFC_Receipts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserFormControls\UFC_Register.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserFormControls\UFC_SellItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

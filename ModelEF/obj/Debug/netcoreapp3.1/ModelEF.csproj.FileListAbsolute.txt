@@ -1,0 +1,9 @@
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelEF\bin\Debug\netcoreapp3.1\ModelEF.deps.json
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelEF\bin\Debug\netcoreapp3.1\ModelEF.dll
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelEF\bin\Debug\netcoreapp3.1\ModelEF.pdb
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelEF\obj\Debug\netcoreapp3.1\ModelEF.csprojAssemblyReference.cache
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelEF\obj\Debug\netcoreapp3.1\ModelEF.AssemblyInfoInputs.cache
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelEF\obj\Debug\netcoreapp3.1\ModelEF.AssemblyInfo.cs
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelEF\obj\Debug\netcoreapp3.1\ModelEF.csproj.CoreCompileInputs.cache
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelEF\obj\Debug\netcoreapp3.1\ModelEF.dll
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\ModelEF\obj\Debug\netcoreapp3.1\ModelEF.pdb
