@@ -33,6 +33,7 @@ namespace QuanLyNhaSach
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Dashboard));
             this.panelLeft = new System.Windows.Forms.Panel();
             this.panelActivated = new System.Windows.Forms.Panel();
+            this.btnCategories = new System.Windows.Forms.Button();
             this.btnMenuReports = new System.Windows.Forms.Button();
             this.btnMenuCustomers = new System.Windows.Forms.Button();
             this.btnMenuSellItems = new System.Windows.Forms.Button();
@@ -48,15 +49,12 @@ namespace QuanLyNhaSach
             this.label3 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.panelTop2 = new System.Windows.Forms.Panel();
-            this.lbUsername = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.lbDate = new System.Windows.Forms.Label();
             this.lbClock = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timerTheTime = new System.Windows.Forms.Timer(this.components);
             this.panelUserForm = new System.Windows.Forms.Panel();
-            this.btnCategories = new System.Windows.Forms.Button();
             this.panelLeft.SuspendLayout();
             this.panelTraiTren.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -91,6 +89,23 @@ namespace QuanLyNhaSach
             this.panelActivated.Name = "panelActivated";
             this.panelActivated.Size = new System.Drawing.Size(10, 60);
             this.panelActivated.TabIndex = 3;
+            // 
+            // btnCategories
+            // 
+            this.btnCategories.FlatAppearance.BorderSize = 0;
+            this.btnCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategories.ForeColor = System.Drawing.Color.White;
+            this.btnCategories.Image = ((System.Drawing.Image)(resources.GetObject("btnCategories.Image")));
+            this.btnCategories.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCategories.Location = new System.Drawing.Point(12, 439);
+            this.btnCategories.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCategories.Name = "btnCategories";
+            this.btnCategories.Size = new System.Drawing.Size(200, 60);
+            this.btnCategories.TabIndex = 3;
+            this.btnCategories.Text = "   Categories";
+            this.btnCategories.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCategories.UseVisualStyleBackColor = true;
+            this.btnCategories.Click += new System.EventHandler(this.btnCategories_Click);
             // 
             // btnMenuReports
             // 
@@ -295,8 +310,6 @@ namespace QuanLyNhaSach
             // panelTop2
             // 
             this.panelTop2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(163)))), ((int)(((byte)(195)))));
-            this.panelTop2.Controls.Add(this.lbUsername);
-            this.panelTop2.Controls.Add(this.label5);
             this.panelTop2.Controls.Add(this.lbDate);
             this.panelTop2.Controls.Add(this.lbClock);
             this.panelTop2.Controls.Add(this.label4);
@@ -305,27 +318,6 @@ namespace QuanLyNhaSach
             this.panelTop2.Name = "panelTop2";
             this.panelTop2.Size = new System.Drawing.Size(985, 85);
             this.panelTop2.TabIndex = 2;
-            // 
-            // lbUsername
-            // 
-            this.lbUsername.AutoSize = true;
-            this.lbUsername.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbUsername.ForeColor = System.Drawing.Color.White;
-            this.lbUsername.Location = new System.Drawing.Point(125, 12);
-            this.lbUsername.Name = "lbUsername";
-            this.lbUsername.Size = new System.Drawing.Size(118, 28);
-            this.lbUsername.TabIndex = 3;
-            this.lbUsername.Text = "ngodinhtri";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(51, 49);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 24);
-            this.label5.TabIndex = 3;
             // 
             // lbDate
             // 
@@ -358,9 +350,9 @@ namespace QuanLyNhaSach
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(17, 12);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 28);
+            this.label4.Size = new System.Drawing.Size(96, 28);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Welcome:";
+            this.label4.Text = "Welcome";
             // 
             // timer1
             // 
@@ -379,23 +371,6 @@ namespace QuanLyNhaSach
             this.panelUserForm.Size = new System.Drawing.Size(985, 580);
             this.panelUserForm.TabIndex = 3;
             // 
-            // btnCategories
-            // 
-            this.btnCategories.FlatAppearance.BorderSize = 0;
-            this.btnCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCategories.ForeColor = System.Drawing.Color.White;
-            this.btnCategories.Image = ((System.Drawing.Image)(resources.GetObject("btnCategories.Image")));
-            this.btnCategories.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCategories.Location = new System.Drawing.Point(12, 439);
-            this.btnCategories.Margin = new System.Windows.Forms.Padding(0);
-            this.btnCategories.Name = "btnCategories";
-            this.btnCategories.Size = new System.Drawing.Size(200, 60);
-            this.btnCategories.TabIndex = 3;
-            this.btnCategories.Text = "   Categories";
-            this.btnCategories.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCategories.UseVisualStyleBackColor = true;
-            this.btnCategories.Click += new System.EventHandler(this.btnCategories_Click);
-            // 
             // Form_Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
@@ -408,6 +383,7 @@ namespace QuanLyNhaSach
             this.Controls.Add(this.panelLeft);
             this.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Dashboard";
             this.Text = "Form_Dashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -440,10 +416,8 @@ namespace QuanLyNhaSach
         private System.Windows.Forms.Label lbWindows;
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Label lbUsername;
         private System.Windows.Forms.Label lbClock;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timerTheTime;

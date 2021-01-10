@@ -92,3 +92,4 @@ C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp
 C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Form_EditItem.resources
 C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Form_Confirm.resources
 C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.UserFormControls.UFC_Categories.resources
+C:\Users\ngodi\OneDrive\Desktop\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.UserFormControls.UFC__Report.resources

@@ -104,6 +104,9 @@ namespace QuanLyNhaSach.UserFormControls
             dtgvCategories.RowTemplate.Height = 100;
             dtgvCategories.Rows.Clear();
             List<Category> categories = _categoryHandler.GetCategoryList();
+            if(categories.Count > 0)
+            {
+
             int count = 0;
             Image img = null;
             foreach (var Item in categories)
@@ -113,6 +116,7 @@ namespace QuanLyNhaSach.UserFormControls
 
                 dtgvCategories.Rows.Add(count, Item.CategoryId, Item.Name, img);
                 
+            }
             }
             btnClear.Enabled = false;
             btnSave.Enabled = false;
@@ -168,7 +172,7 @@ namespace QuanLyNhaSach.UserFormControls
                 if (picCate.Image!=null)
                 {
                     //Kiểm tra đã có Category chưa?
-                    if (_categoryHandler.FindCategory(name) == null)
+                    if (_categoryHandler.FindCategory(name) == null || name.Equals(_categoryHandler.getName(cateID)))
                     {
                         Category cate = await _categoryHandler.GetCategory(cateID);
                         cate.Name = name;

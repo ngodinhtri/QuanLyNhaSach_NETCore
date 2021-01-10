@@ -17,12 +17,12 @@ namespace QuanLyNhaSach.UserFormControls
     {
         //Khai báo
         private double dTotal = 0.0;
-        private double dTotalTemp = 0.0;
-
-        private string nameProductCurrent = "";
-        private CategoryHandler _categoryHandler = new CategoryHandler();
+       
+        
         private ProductHandler _productHandler = new ProductHandler();
         private CustomerHandler _customerHandler = new CustomerHandler();
+        private BillHandler _billHandler = new BillHandler();
+        private BillItemHandler _billItemHandler = new BillItemHandler();
         private string _rootProjectPath = Path.GetDirectoryName(Application.StartupPath) + "\\CommonImage\\";
 
         public UFC_SellItems()
@@ -34,14 +34,17 @@ namespace QuanLyNhaSach.UserFormControls
         {
             LoadDTGVShow();
             List<Customer> customers = _customerHandler.GetList();
-            foreach (var Item in customers)
+            if(customers.Count > 0)
             {
-                ComboboxItem boxItem = new ComboboxItem();
-                boxItem.Text = Item.Name;
-                boxItem.Value = Item.ID;
-                cbCustomer.Items.Add(boxItem);
+                foreach (var Item in customers)
+                {
+                    ComboboxItem boxItem = new ComboboxItem();
+                    boxItem.Text = Item.Name;
+                    boxItem.Value = Item.ID;
+                    cbCustomer.Items.Add(boxItem);
+                }
+                cbCustomer.SelectedIndex = 0;
             }
-            cbCustomer.SelectedIndex = 0;
         }
 
         //Load DataGridView
@@ -65,14 +68,20 @@ namespace QuanLyNhaSach.UserFormControls
         {
             int quanity = 0;
             if(txtQuantity.Text.Length > 0)
-            {
-                Regex regex = new Regex(@"^[0-9]*$");
-                if(regex.IsMatch(txtQuantity.Text))
+            {        
+                try
                 {
                     quanity = Int32.Parse(txtQuantity.Text);
+                    if(quanity <= 0)
+                    {
+                        errorProvider1.SetError(txtQuantity, "Quantity <= 0");
+                        txtQuantity.Clear();
+                        txtQuantity.Focus();
+                        return;
+                    }
                     errorProvider1.Clear();
                 }
-                else
+                catch(Exception)
                 {
                     errorProvider1.SetError(txtQuantity, "Please input an number!");
                     txtQuantity.Clear();
@@ -114,7 +123,7 @@ namespace QuanLyNhaSach.UserFormControls
                 }
                 else
                 {
-                    MessageBox.Show("Quanity > Stock");
+                    MessageBox.Show("Quantity > Stock");
                 }
             }
             else
@@ -150,7 +159,72 @@ namespace QuanLyNhaSach.UserFormControls
         //Clear buttton
         private void btnClear_Click(object sender, EventArgs e)
         {
-            
+            LoadDTGVShow();
+            lvSellItems.Items.Clear();
+            dTotal = 0.0;
+            lbTotal.Text = dTotal.ToString();
+        }
+
+        private async void btnFinish_Click(object sender, EventArgs e)
+        {
+            DialogResult r = MessageBox.Show("Are you sure?", "Finish", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(r == DialogResult.Yes)
+            {
+                if(lvSellItems.Items.Count == 0)
+                {
+                    MessageBox.Show("Not have any item");
+                    return;
+                }
+                PrimaryKey key = new PrimaryKey();
+                String customerID = (cbCustomer.SelectedItem as ComboboxItem).Value.ToString();
+                Bill bill = new Bill();
+                bill.ID = key.createKey();
+                bill.CustomerID = customerID;
+                bill.Total = dTotal;
+                bill.dateTime = DateTime.Now;
+                bool result = await _billHandler.Create(bill);
+
+                if (result)
+                {
+                    System.Collections.IList list = lvSellItems.Items;
+                    for (int i = 0; i < list.Count; i++)
+                    {
+                        ListViewItem item = (ListViewItem)list[i];
+
+                        //Detail
+                        String productName = item.SubItems[0].Text;
+                        int quanity = Int32.Parse(item.SubItems[1].Text);
+
+                        BillItem billItem = new BillItem();
+                        billItem.ID = key.createKey();
+                        billItem.BillID = bill.ID;
+                        Product product = _productHandler.FindProductByName(productName);
+                        billItem.ProductID = product.ID;
+                        billItem.ProductName = product.Name;
+                        billItem.Price = product.Price;
+                        billItem.Quanity = quanity;
+
+                        bool result2 = await _billItemHandler.Create(billItem);
+                        if(!result2)
+                        {
+                            MessageBox.Show("Invoice creation failed");
+                            return;
+                        }
+                        else
+                        {
+                            product.Quantiy -= quanity;
+                            bool result3 = await _productHandler.UpdateProductAsync(product);
+                        }
+                    }
+                    MessageBox.Show("Done");
+                    LoadDTGVShow();
+                    btnClear_Click(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("Invoice creation failed");
+                }
+            }
         }
     }
 }

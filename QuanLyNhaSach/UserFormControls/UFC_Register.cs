@@ -47,6 +47,9 @@ namespace QuanLyNhaSach.UserFormControls
                     if (result)
                     {
                         MessageBox.Show("Succeed!");
+                        txtUsername.Clear();
+                        txtPassword.Clear();
+                        txtConfirmPass.Clear();
                     }else
                     {
                         MessageBox.Show("Failed");

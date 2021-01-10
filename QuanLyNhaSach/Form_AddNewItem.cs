@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace QuanLyNhaSach
@@ -47,8 +48,31 @@ namespace QuanLyNhaSach
         {
             string name = txtName.Text;
             string category = cbCategories.SelectedItem.ToString();
-            int quanity = Int32.Parse(txtQuanity.Text);
-            double price = Double.Parse(txtPrice.Text);
+            //bool checkTxtPrice = Regex.IsMatch(txtPrice.Text, @"^\-{0,1}\d+(.\d+){0,1}$");
+            //bool checkTxtQuantity = Regex.IsMatch(txtPrice.Text, @"^[0-9]*$");
+            //if(!checkTxtPrice || !checkTxtQuantity)
+            //{
+            //    MessageBox.Show("The price or the quantity is invalid");
+            //    return;
+            //}
+            int quanity = 0;
+            double price = 0.0;
+            try
+            {
+                quanity = Int32.Parse(txtQuanity.Text);
+                price = Double.Parse(txtPrice.Text);
+
+                if(quanity < 0.0 || price < 0)
+                {
+                    MessageBox.Show("The price or the quantity is invalid");
+                    return;
+                }
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("The price or the quantity is invalid");
+                return;
+            }
             string cateID = (cbCategories.SelectedItem as ComboboxItem).Value.ToString();
 
             //Kiểm tra đã thêm ảnh chưa?
@@ -104,6 +128,8 @@ namespace QuanLyNhaSach
         private void Form_AddNewItem_Load(object sender, EventArgs e)
         {
             List<Category> categories = _categoryHandler.GetCategoryList();
+            if(categories.Count > 0)
+            {
             foreach (var Item in categories)
             {
                 ComboboxItem boxItem = new ComboboxItem();
@@ -112,6 +138,12 @@ namespace QuanLyNhaSach
                 cbCategories.Items.Add(boxItem);
             }
             cbCategories.SelectedIndex = 0;
+            }
+            else
+            {
+                MessageBox.Show("No category yet");
+                this.Close();
+            }
         }
     }
 }

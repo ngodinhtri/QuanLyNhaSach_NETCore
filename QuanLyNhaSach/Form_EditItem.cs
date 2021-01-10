@@ -51,16 +51,32 @@ namespace QuanLyNhaSach
         private async void btnSave_Click(object sender, EventArgs e)
         {
             string name = txtName.Text;
-            string category = cbCategories.SelectedItem.ToString();
-            int quanity = Int32.Parse(txtQuanity.Text);
-            double price = Double.Parse(txtPrice.Text);
+            int quanity = 0;
+            double price = 0.0;
+            try
+            {
+                quanity = Int32.Parse(txtQuanity.Text);
+                price = Double.Parse(txtPrice.Text);
+
+                if (quanity < 0.0 || price < 0)
+                {
+                    MessageBox.Show("The price or the quantity is invalid");
+                    return;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("The price or the quantity is invalid");
+                return;
+            }
+
             string cateID = (cbCategories.SelectedItem as ComboboxItem).Value.ToString();
 
             //Kiểm tra đã thêm ảnh chưa?
             if (picItem.Image != null)
             {
 
-                if (_productHandler.FindProductByName(name) == null)
+                if (_productHandler.FindProductByName(name) == null || name.Equals(_productHandler.getName(sIDItem)))
                 {
                     PrimaryKey key = new PrimaryKey();
                     Product pd = await _productHandler.GetProductyByID(sIDItem);

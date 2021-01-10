@@ -97,6 +97,19 @@ namespace ModelHandle
                 return null;
             }
         }
+
+        public  Product GetByID(string ID)
+        {
+            try
+            {
+                Product result =  Product.Find(ID);
+                return result;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
         //Tìm kiếm
         public List<Product> GetSearchedList(string key)
         {
@@ -108,6 +121,17 @@ namespace ModelHandle
             catch (Exception)
             {
                 return new List<Product>();
+            }
+        }
+
+        public string getName(string id)
+        {
+            try
+            {
+                return Product.Find(id).Name;
+            }catch(Exception)
+            {
+                return null;
             }
         }
     }

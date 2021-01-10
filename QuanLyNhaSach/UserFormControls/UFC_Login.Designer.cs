@@ -29,6 +29,7 @@ namespace QuanLyNhaSach.UserFormControls
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UFC_Login));
             this.btnLogin = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -39,7 +40,9 @@ namespace QuanLyNhaSach.UserFormControls
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnRegisterUserForm = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -145,6 +148,10 @@ namespace QuanLyNhaSach.UserFormControls
             this.btnRegisterUserForm.UseVisualStyleBackColor = false;
             this.btnRegisterUserForm.Click += new System.EventHandler(this.btnRegisterUserForm_Click_1);
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // UFC_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
@@ -163,6 +170,7 @@ namespace QuanLyNhaSach.UserFormControls
             this.Name = "UFC_Login";
             this.Size = new System.Drawing.Size(1182, 618);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,5 +187,6 @@ namespace QuanLyNhaSach.UserFormControls
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnRegisterUserForm;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

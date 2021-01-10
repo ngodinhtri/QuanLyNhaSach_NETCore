@@ -11,6 +11,8 @@ namespace ModelDatabase.EF
         public string BillID { set; get; }
         public Product Product { set; get; }
         public string ProductID { set; get; }
+        public string ProductName { set; get; }
+        public double Price { set; get; }
         public int Quanity { set; get; }
     }
 }

@@ -117,7 +117,7 @@ namespace ModelDatabase
 
 
             });
-
+            //Bill
             modelBuilder.Entity<Bill>(entity =>
             {
                 entity.HasKey(key => key.ID);
@@ -128,7 +128,7 @@ namespace ModelDatabase
               .OnDelete(DeleteBehavior.SetNull)
               .HasConstraintName("FK_Bill_Customer");
             });
-
+            //BillItem
             modelBuilder.Entity<BillItem>(entity =>
             {
                 entity.HasKey(key => key.ID);
@@ -144,6 +144,16 @@ namespace ModelDatabase
                 .HasForeignKey("BillID")
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK_billItem_Bill");
+
+                entity.Property(e => e.ProductName)
+                .HasColumnName("ProductName")
+                .HasColumnType("nvarchar(250)")
+                .IsRequired(true);
+
+                entity.Property(e => e.Price)
+                .HasColumnName("Price")
+                .HasDefaultValue(0.0)
+                .IsRequired(true);
             });
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

@@ -81,6 +81,19 @@ namespace ModelHandle
             }
         }
 
+        public Customer GetCustomer(string ID)
+        {
+            try
+            {
+                Customer result =  Customer.Find(ID);
+                return result;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
         public async Task<bool> Remove(string Id)
         {
             try
@@ -100,6 +113,19 @@ namespace ModelHandle
             try
             {
                 Customer result = Customer.Where(Customer => Customer.Phone == phone).FirstOrDefault();
+                return result;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public String GetName(string ID)
+        {
+            try
+            {
+                String result = Customer.Find(ID).Name;
                 return result;
             }
             catch (Exception)

@@ -48,8 +48,19 @@ namespace ModelDatabase.Migrations
                     b.Property<string>("BillID")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<double>("Price")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("float")
+                        .HasDefaultValue(0.0)
+                        .HasColumnName("Price");
+
                     b.Property<string>("ProductID")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(250)")
+                        .HasColumnName("ProductName");
 
                     b.Property<int>("Quanity")
                         .HasColumnType("int");

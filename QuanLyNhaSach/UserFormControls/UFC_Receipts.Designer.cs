@@ -37,27 +37,27 @@ namespace QuanLyNhaSach.UserFormControls
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.cbCustomer = new System.Windows.Forms.ComboBox();
+            this.lvDetail = new System.Windows.Forms.ListView();
             this.col_Name = new System.Windows.Forms.ColumnHeader();
             this.col_Quanity = new System.Windows.Forms.ColumnHeader();
             this.col_Amount = new System.Windows.Forms.ColumnHeader();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.txtDate = new System.Windows.Forms.TextBox();
             this.txtInvoid = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgvBills = new System.Windows.Forms.DataGridView();
             this.col_Numeric = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_Customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelRight.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvBills)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -97,10 +97,10 @@ namespace QuanLyNhaSach.UserFormControls
             this.panelRight.Controls.Add(this.btnDelete);
             this.panelRight.Controls.Add(this.btnClear);
             this.panelRight.Controls.Add(this.btnSave);
-            this.panelRight.Controls.Add(this.comboBox1);
-            this.panelRight.Controls.Add(this.listView1);
-            this.panelRight.Controls.Add(this.textBox2);
-            this.panelRight.Controls.Add(this.textBox3);
+            this.panelRight.Controls.Add(this.cbCustomer);
+            this.panelRight.Controls.Add(this.lvDetail);
+            this.panelRight.Controls.Add(this.txtTotal);
+            this.panelRight.Controls.Add(this.txtDate);
             this.panelRight.Controls.Add(this.txtInvoid);
             this.panelRight.Controls.Add(this.label4);
             this.panelRight.Controls.Add(this.label5);
@@ -125,6 +125,7 @@ namespace QuanLyNhaSach.UserFormControls
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnClear
             // 
@@ -138,6 +139,7 @@ namespace QuanLyNhaSach.UserFormControls
             this.btnClear.TabIndex = 4;
             this.btnClear.Text = "CLEAR";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnSave
             // 
@@ -151,29 +153,32 @@ namespace QuanLyNhaSach.UserFormControls
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // comboBox1
+            // cbCustomer
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(125, 72);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(196, 32);
-            this.comboBox1.TabIndex = 3;
+            this.cbCustomer.FormattingEnabled = true;
+            this.cbCustomer.Location = new System.Drawing.Point(125, 72);
+            this.cbCustomer.Name = "cbCustomer";
+            this.cbCustomer.Size = new System.Drawing.Size(196, 32);
+            this.cbCustomer.TabIndex = 3;
             // 
-            // listView1
+            // lvDetail
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvDetail.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.col_Name,
             this.col_Quanity,
             this.col_Amount});
-            this.listView1.GridLines = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(11, 208);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(310, 291);
-            this.listView1.TabIndex = 2;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.lvDetail.GridLines = true;
+            this.lvDetail.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lvDetail.HideSelection = false;
+            this.lvDetail.Location = new System.Drawing.Point(11, 208);
+            this.lvDetail.MultiSelect = false;
+            this.lvDetail.Name = "lvDetail";
+            this.lvDetail.Size = new System.Drawing.Size(310, 291);
+            this.lvDetail.TabIndex = 2;
+            this.lvDetail.UseCompatibleStateImageBehavior = false;
+            this.lvDetail.View = System.Windows.Forms.View.Details;
             // 
             // col_Name
             // 
@@ -190,21 +195,21 @@ namespace QuanLyNhaSach.UserFormControls
             this.col_Amount.Text = "Amount";
             this.col_Amount.Width = 130;
             // 
-            // textBox2
+            // txtTotal
             // 
-            this.textBox2.Location = new System.Drawing.Point(125, 152);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(196, 32);
-            this.textBox2.TabIndex = 1;
+            this.txtTotal.Location = new System.Drawing.Point(125, 152);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
+            this.txtTotal.Size = new System.Drawing.Size(196, 32);
+            this.txtTotal.TabIndex = 1;
             // 
-            // textBox3
+            // txtDate
             // 
-            this.textBox3.Location = new System.Drawing.Point(125, 114);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(196, 32);
-            this.textBox3.TabIndex = 1;
+            this.txtDate.Location = new System.Drawing.Point(125, 114);
+            this.txtDate.Name = "txtDate";
+            this.txtDate.ReadOnly = true;
+            this.txtDate.Size = new System.Drawing.Size(196, 32);
+            this.txtDate.TabIndex = 1;
             // 
             // txtInvoid
             // 
@@ -264,27 +269,30 @@ namespace QuanLyNhaSach.UserFormControls
             this.label1.TabIndex = 0;
             this.label1.Text = "Details";
             // 
-            // dataGridView1
+            // dtgvBills
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgvBills.AllowUserToAddRows = false;
+            this.dtgvBills.AllowUserToDeleteRows = false;
+            this.dtgvBills.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvBills.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvBills.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_Numeric,
-            this.dataGridViewTextBoxColumn1,
+            this.col_ID,
             this.col_Customer,
             this.col_Date,
             this.col_Total});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 10);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(638, 560);
-            this.dataGridView1.TabIndex = 5;
+            this.dtgvBills.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvBills.Location = new System.Drawing.Point(10, 10);
+            this.dtgvBills.MultiSelect = false;
+            this.dtgvBills.Name = "dtgvBills";
+            this.dtgvBills.ReadOnly = true;
+            this.dtgvBills.RowHeadersVisible = false;
+            this.dtgvBills.RowHeadersWidth = 51;
+            this.dtgvBills.RowTemplate.Height = 29;
+            this.dtgvBills.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvBills.Size = new System.Drawing.Size(638, 560);
+            this.dtgvBills.TabIndex = 5;
+            this.dtgvBills.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvBills_CellDoubleClick);
             // 
             // col_Numeric
             // 
@@ -295,14 +303,12 @@ namespace QuanLyNhaSach.UserFormControls
             this.col_Numeric.ReadOnly = true;
             this.col_Numeric.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // dataGridViewTextBoxColumn1
+            // col_ID
             // 
-            this.dataGridViewTextBoxColumn1.FillWeight = 118.3155F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.col_ID.HeaderText = "ID";
+            this.col_ID.MinimumWidth = 6;
+            this.col_ID.Name = "col_ID";
+            this.col_ID.ReadOnly = true;
             // 
             // col_Customer
             // 
@@ -336,7 +342,7 @@ namespace QuanLyNhaSach.UserFormControls
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtgvBills);
             this.Controls.Add(this.panelRight);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -345,9 +351,10 @@ namespace QuanLyNhaSach.UserFormControls
             this.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "UFC_Receipts";
             this.Size = new System.Drawing.Size(985, 580);
+            this.Load += new System.EventHandler(this.UFC_Receipts_Load);
             this.panelRight.ResumeLayout(false);
             this.panelRight.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvBills)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -363,21 +370,21 @@ namespace QuanLyNhaSach.UserFormControls
         private System.Windows.Forms.TextBox txtInvoid;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ComboBox cbCustomer;
+        private System.Windows.Forms.ListView lvDetail;
         private System.Windows.Forms.ColumnHeader col_Name;
         private System.Windows.Forms.ColumnHeader col_Quanity;
         private System.Windows.Forms.ColumnHeader col_Amount;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.TextBox txtDate;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgvBills;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Numeric;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Customer;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Total;

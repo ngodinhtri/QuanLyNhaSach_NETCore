@@ -197,6 +197,7 @@ namespace QuanLyNhaSach.UserFormControls
             this.dtgvProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvProducts.Size = new System.Drawing.Size(965, 510);
             this.dtgvProducts.TabIndex = 9;
+            this.dtgvProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvProducts_CellClick);
             this.dtgvProducts.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgvProducts_CellMouseDoubleClick);
             // 
             // col_Numemric

@@ -92,5 +92,10 @@ namespace ModelHandle
             }
             return true;
         }
+
+        public String getName(string id)
+        {
+            return Category.Find(id).Name;
+        }
     }
 }

@@ -50,6 +50,7 @@ namespace QuanLyNhaSach.UserFormControls
                 customer.Name = name;
                 customer.Gender = gender;
                 customer.Address = address;
+                customer.dateTime = DateTime.Now;
 
                 bool result = await _customerHandler.CreateCustomer(customer);
                 if (result)

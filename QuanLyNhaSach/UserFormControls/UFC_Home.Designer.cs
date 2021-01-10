@@ -37,11 +37,11 @@ namespace QuanLyNhaSach.UserFormControls
             this.label2 = new System.Windows.Forms.Label();
             this.panelQuanityPurchasedItems = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbStockItems = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panelQuanityCustomer = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbCustomersQty = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panelQuanitySoldItems.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -57,11 +57,11 @@ namespace QuanLyNhaSach.UserFormControls
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(86)))), ((int)(((byte)(118)))));
-            this.label1.Location = new System.Drawing.Point(296, 18);
+            this.label1.Location = new System.Drawing.Point(425, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(392, 34);
+            this.label1.Size = new System.Drawing.Size(134, 34);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Sales and PurChase OverView";
+            this.label1.Text = "OverView";
             // 
             // panelQuanitySoldItems
             // 
@@ -112,7 +112,7 @@ namespace QuanLyNhaSach.UserFormControls
             this.panelQuanityPurchasedItems.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelQuanityPurchasedItems.BackColor = System.Drawing.Color.Teal;
             this.panelQuanityPurchasedItems.Controls.Add(this.pictureBox2);
-            this.panelQuanityPurchasedItems.Controls.Add(this.label3);
+            this.panelQuanityPurchasedItems.Controls.Add(this.lbStockItems);
             this.panelQuanityPurchasedItems.Controls.Add(this.label4);
             this.panelQuanityPurchasedItems.Location = new System.Drawing.Point(367, 108);
             this.panelQuanityPurchasedItems.Name = "panelQuanityPurchasedItems";
@@ -129,16 +129,16 @@ namespace QuanLyNhaSach.UserFormControls
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
             // 
-            // label3
+            // lbStockItems
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Roboto Condensed", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(10, 44);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 39);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "1000";
+            this.lbStockItems.AutoSize = true;
+            this.lbStockItems.Font = new System.Drawing.Font("Roboto Condensed", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbStockItems.ForeColor = System.Drawing.Color.White;
+            this.lbStockItems.Location = new System.Drawing.Point(10, 44);
+            this.lbStockItems.Name = "lbStockItems";
+            this.lbStockItems.Size = new System.Drawing.Size(85, 39);
+            this.lbStockItems.TabIndex = 3;
+            this.lbStockItems.Text = "1000";
             // 
             // label4
             // 
@@ -147,16 +147,16 @@ namespace QuanLyNhaSach.UserFormControls
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(10, 10);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(167, 24);
+            this.label4.Size = new System.Drawing.Size(123, 24);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Purchased Items:";
+            this.label4.Text = "Stock Items:";
             // 
             // panelQuanityCustomer
             // 
             this.panelQuanityCustomer.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelQuanityCustomer.BackColor = System.Drawing.Color.MediumPurple;
             this.panelQuanityCustomer.Controls.Add(this.pictureBox3);
-            this.panelQuanityCustomer.Controls.Add(this.label5);
+            this.panelQuanityCustomer.Controls.Add(this.lbCustomersQty);
             this.panelQuanityCustomer.Controls.Add(this.label6);
             this.panelQuanityCustomer.Location = new System.Drawing.Point(699, 108);
             this.panelQuanityCustomer.Name = "panelQuanityCustomer";
@@ -173,16 +173,16 @@ namespace QuanLyNhaSach.UserFormControls
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
             // 
-            // label5
+            // lbCustomersQty
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Roboto Condensed", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(10, 44);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 39);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "1000";
+            this.lbCustomersQty.AutoSize = true;
+            this.lbCustomersQty.Font = new System.Drawing.Font("Roboto Condensed", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbCustomersQty.ForeColor = System.Drawing.Color.White;
+            this.lbCustomersQty.Location = new System.Drawing.Point(10, 44);
+            this.lbCustomersQty.Name = "lbCustomersQty";
+            this.lbCustomersQty.Size = new System.Drawing.Size(85, 39);
+            this.lbCustomersQty.TabIndex = 3;
+            this.lbCustomersQty.Text = "1000";
             // 
             // label6
             // 
@@ -206,6 +206,7 @@ namespace QuanLyNhaSach.UserFormControls
             this.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "UFC_Home";
             this.Size = new System.Drawing.Size(985, 580);
+            this.Load += new System.EventHandler(this.UFC_Home_Load);
             this.panelQuanitySoldItems.ResumeLayout(false);
             this.panelQuanitySoldItems.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -229,11 +230,11 @@ namespace QuanLyNhaSach.UserFormControls
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelQuanityPurchasedItems;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbStockItems;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panelQuanityCustomer;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox3;      
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbCustomersQty;
     }
 }

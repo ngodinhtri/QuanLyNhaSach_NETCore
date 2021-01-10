@@ -43,5 +43,8 @@
     <Compile Update="UserFormControls\UFC_SellItems.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="UserFormControls\UFC__Report.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

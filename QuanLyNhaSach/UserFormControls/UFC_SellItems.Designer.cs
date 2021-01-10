@@ -50,6 +50,12 @@ namespace QuanLyNhaSach.UserFormControls
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.dtgvProducts = new System.Windows.Forms.DataGridView();
             this.col_Numeric = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,19 +63,13 @@ namespace QuanLyNhaSach.UserFormControls
             this.col_Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.txtQuantity = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelRight.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvProducts)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvProducts)).BeginInit();
             this.SuspendLayout();
             // 
             // panelRight
@@ -139,9 +139,9 @@ namespace QuanLyNhaSach.UserFormControls
             // cbCustomer
             // 
             this.cbCustomer.FormattingEnabled = true;
-            this.cbCustomer.Location = new System.Drawing.Point(120, 153);
+            this.cbCustomer.Location = new System.Drawing.Point(11, 162);
             this.cbCustomer.Name = "cbCustomer";
-            this.cbCustomer.Size = new System.Drawing.Size(115, 32);
+            this.cbCustomer.Size = new System.Drawing.Size(224, 32);
             this.cbCustomer.TabIndex = 3;
             // 
             // btnFinish
@@ -157,6 +157,7 @@ namespace QuanLyNhaSach.UserFormControls
             this.btnFinish.TabIndex = 1;
             this.btnFinish.Text = "Finish";
             this.btnFinish.UseVisualStyleBackColor = false;
+            this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
             // 
             // btnClear
             // 
@@ -190,7 +191,7 @@ namespace QuanLyNhaSach.UserFormControls
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(86)))), ((int)(((byte)(118)))));
-            this.label5.Location = new System.Drawing.Point(11, 156);
+            this.label5.Location = new System.Drawing.Point(11, 135);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(103, 24);
             this.label5.TabIndex = 1;
@@ -295,6 +296,63 @@ namespace QuanLyNhaSach.UserFormControls
             this.panel2.Size = new System.Drawing.Size(10, 580);
             this.panel2.TabIndex = 0;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(86)))), ((int)(((byte)(118)))));
+            this.label2.Location = new System.Drawing.Point(-187, 457);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 24);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Quanity:";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dtgvProducts);
+            this.panel1.Controls.Add(this.panel9);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(725, 580);
+            this.panel1.TabIndex = 4;
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.txtQuantity);
+            this.panel9.Controls.Add(this.label4);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel9.Location = new System.Drawing.Point(0, 509);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(725, 71);
+            this.panel9.TabIndex = 5;
+            // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Location = new System.Drawing.Point(136, 15);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(583, 32);
+            this.txtQuantity.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(86)))), ((int)(((byte)(118)))));
+            this.label4.Location = new System.Drawing.Point(20, 18);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(83, 24);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Quanity:";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // dtgvProducts
             // 
             this.dtgvProducts.AllowUserToAddRows = false;
@@ -318,8 +376,8 @@ namespace QuanLyNhaSach.UserFormControls
             this.dtgvProducts.RowHeadersWidth = 51;
             this.dtgvProducts.RowTemplate.Height = 29;
             this.dtgvProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvProducts.Size = new System.Drawing.Size(725, 580);
-            this.dtgvProducts.TabIndex = 2;
+            this.dtgvProducts.Size = new System.Drawing.Size(725, 509);
+            this.dtgvProducts.TabIndex = 6;
             // 
             // col_Numeric
             // 
@@ -375,63 +433,6 @@ namespace QuanLyNhaSach.UserFormControls
             this.col_Price.ReadOnly = true;
             this.col_Price.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(86)))), ((int)(((byte)(118)))));
-            this.label2.Location = new System.Drawing.Point(-187, 457);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 24);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Quanity:";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.panel9);
-            this.panel1.Controls.Add(this.dtgvProducts);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(725, 580);
-            this.panel1.TabIndex = 4;
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.txtQuantity);
-            this.panel9.Controls.Add(this.label4);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel9.Location = new System.Drawing.Point(0, 475);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(725, 105);
-            this.panel9.TabIndex = 5;
-            // 
-            // txtQuantity
-            // 
-            this.txtQuantity.Location = new System.Drawing.Point(136, 15);
-            this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(583, 32);
-            this.txtQuantity.TabIndex = 2;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(86)))), ((int)(((byte)(118)))));
-            this.label4.Location = new System.Drawing.Point(20, 18);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 24);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Quanity:";
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // UFC_SellItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -447,12 +448,12 @@ namespace QuanLyNhaSach.UserFormControls
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvProducts)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvProducts)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -475,7 +476,6 @@ namespace QuanLyNhaSach.UserFormControls
         private System.Windows.Forms.ColumnHeader col_Quanity;
         private System.Windows.Forms.ColumnHeader col_Amount;
         private System.Windows.Forms.Button btnFinish;
-        private System.Windows.Forms.DataGridView dtgvProducts;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbTotal;
         private System.Windows.Forms.Label label3;
@@ -485,12 +485,13 @@ namespace QuanLyNhaSach.UserFormControls
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.ComboBox cbCustomer;
         private System.Windows.Forms.TextBox txtQuantity;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.DataGridView dtgvProducts;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Numeric;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Name;
         private System.Windows.Forms.DataGridViewImageColumn col_Img;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Category;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Stock;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Price;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

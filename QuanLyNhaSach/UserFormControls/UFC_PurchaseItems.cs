@@ -41,6 +41,10 @@ namespace QuanLyNhaSach.UserFormControls
                     Image img = Image.FromFile(_rootProjectPath + Item.Image);
                     dtgvProducts.Rows.Add(count, Item.Name, img, Item.category != null ? Item.category.Name : "Null", Item.Quantiy, Item.Price);
                 }
+                if (dtgvProducts.Rows.Count > 0)
+                {
+                    nameProductCurrent = dtgvProducts.Rows[0].Cells[1].Value.ToString();
+                }
             }
             else
             {
@@ -54,22 +58,28 @@ namespace QuanLyNhaSach.UserFormControls
         private async void btnDeleteItems_Click(object sender, EventArgs e)
         {
             Product pd = _productHandler.GetProduct(nameProductCurrent);
-
-            DialogResult r = MessageBox.Show("Do you want to delete this product?", "DELETE", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if(r == DialogResult.Yes)
+            if (pd != null)
             {
-                bool result = await _productHandler.RemoveProduct(pd.ID);
+                DialogResult r = MessageBox.Show("Do you want to delete this product?", "DELETE", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                if(result == true)
+                if (r == DialogResult.Yes)
                 {
-                    MessageBox.Show("Deleted");
-                    LoadDTGVShow();
+                    bool result = await _productHandler.RemoveProduct(pd.ID);
+
+                    if (result == true)
+                    {
+                        MessageBox.Show("Deleted");
+                        LoadDTGVShow();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Failed");
-                }
+            }
+            else
+            {
+                MessageBox.Show("Not have any product");
             }
         }
 
@@ -96,6 +106,10 @@ namespace QuanLyNhaSach.UserFormControls
                 dtgvProducts.Rows.Add(count, Item.Name, img, Item.category != null ? Item.category.Name: "Null", Item.Quantiy, Item.Price);
 
             }
+            if (dtgvProducts.Rows.Count > 0)
+            {
+                nameProductCurrent = dtgvProducts.Rows[0].Cells[1].Value.ToString();
+            }
         }
 
         private void UFC_PurchaseItems_Load(object sender, EventArgs e)
@@ -114,12 +128,19 @@ namespace QuanLyNhaSach.UserFormControls
                     if (pd != null)
                     {
                         string idItem = pd.ID;
-                        Form_EditItem form_EditItem = new Form_EditItem(idItem);
-                        form_EditItem.Show();
+                        using (Form_EditItem form_EditItem = new Form_EditItem(idItem))
+                        {
+                            form_EditItem.ShowDialog();
+                        }
+                        UFC_PurchaseItems_Load(sender, e);
                     }
-                    LoadDTGVShow();
                 }
             }
+        }
+
+        private void dtgvProducts_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            nameProductCurrent = dtgvProducts.SelectedRows[0].Cells[1].Value.ToString();
         }
     }
 }

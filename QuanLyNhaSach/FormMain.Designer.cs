@@ -106,6 +106,7 @@ namespace QuanLyNhaSach
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMain";
             this.Text = "FormDangKi";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
